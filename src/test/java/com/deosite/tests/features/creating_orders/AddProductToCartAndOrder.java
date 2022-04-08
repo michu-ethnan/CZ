@@ -37,10 +37,8 @@ public class AddProductToCartAndOrder {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(7),
-                AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON)
+                Open.productPageByPosition(0),
+                AddProduct.toCart()
 
         );
     }

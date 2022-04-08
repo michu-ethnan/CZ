@@ -24,8 +24,7 @@ import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DeleteFromCart {
@@ -52,7 +51,7 @@ public class DeleteFromCart {
         theActorInTheSpotlight().attemptsTo(
 
                 Click.on(DELETE_PRODUCT_BUTTON),
-                WaitUntil.the(EMPTY_CART_MESSAGE, isPresent())
+                WaitUntil.the(EMPTY_CART_MESSAGE, isPresent()).forNoMoreThan(50).seconds()
         );
     }
 
@@ -61,5 +60,8 @@ public class DeleteFromCart {
         theActorInTheSpotlight().should(seeThat(EmptyCartMessage.value(), equalTo(
                 as(theActorInTheSpotlight()).translate(message)
         )));
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(ALERT_BOX, isNotPresent())
+        );
     }
 }

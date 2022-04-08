@@ -1,0 +1,6 @@
+.idea/
+tests/
+target/
+allure-results/
+reports/
+tests.iml

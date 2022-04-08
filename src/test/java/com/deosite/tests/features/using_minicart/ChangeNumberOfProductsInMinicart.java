@@ -41,10 +41,8 @@ public class ChangeNumberOfProductsInMinicart {
                 Search.forProductByTranslatedKeyword(product),
                 MoveMouseToTop.move(),
                 WaitUntil.the(PRODUCTS_TITLE, isPresent()).forNoMoreThan(50).seconds(),
-                Open.productPageByPosition(7),
+                Open.productPageByPosition(3),
                 AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart()
         );
     }

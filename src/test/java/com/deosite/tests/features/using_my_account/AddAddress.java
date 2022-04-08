@@ -13,6 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
@@ -23,6 +24,7 @@ import static com.deosite.tests.pages.AccountPage.SUBMIT_NEW_ADDRESS_BUTTON;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -67,7 +69,7 @@ public class AddAddress {
         theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), equalTo(
                 as(theActorInTheSpotlight()).translate(message))));
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(ALERT_BOX, isNotPresent()).forNoMoreThan(100).seconds()
+                Ensure.that(SUBMIT_BUTTON).isNotDisplayed()
         );
     }
 }

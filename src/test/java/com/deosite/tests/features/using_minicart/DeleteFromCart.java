@@ -12,11 +12,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.MiniCart.MINICART_BUTTON;
 import static com.deosite.tests.pages.MiniCart.DELETE_PRODUCT_BUTTON;
 import static com.deosite.tests.pages.MiniCart.EMPTY_CART_MESSAGE;
@@ -61,7 +63,7 @@ public class DeleteFromCart {
                 as(theActorInTheSpotlight()).translate(message)
         )));
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(ALERT_BOX, isNotPresent())
+                Ensure.that(SUBMIT_BUTTON).isNotDisplayed()
         );
     }
 }

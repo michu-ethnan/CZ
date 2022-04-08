@@ -41,11 +41,9 @@ public class AddTwoDifferentProductsAndCalculateTotalSum {
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotVisible()),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Open.productPageByPosition(8),
+                Open.productPageByPosition(0),
                 AddProduct.toCart(),
                 WaitUntil.the(ALERT_BOX, isNotVisible()).forNoMoreThan(100).seconds(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
                 Click.on(MiniCart.MINICART_BUTTON),
                 WaitUntil.the(MiniCart.PRODUCT_PRICE_LIST, isPresent()).forNoMoreThan(100).seconds()
         );

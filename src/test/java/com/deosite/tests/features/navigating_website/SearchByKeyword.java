@@ -36,6 +36,6 @@ public class SearchByKeyword {
 
     @Then("he should see that the first product contains the keyword")
     public void actor_should_see_that_the_first_product_contains_keyword() {
-        theActorInTheSpotlight().should(seeThat(Product.titleOfAProductOnSearchPageByPosition(0), containsString("hrnek")));
+        theActorInTheSpotlight().should(seeThat(Product.titleOfAProductOnSearchPageByPosition(0), containsString("Dekorační")));
     }
 }

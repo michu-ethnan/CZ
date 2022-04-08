@@ -21,7 +21,7 @@ public class Bundle_cz_CZ extends ListResourceBundle {
 
                 // Products
                 {"mug", "Zahrada"},
-                {"cup", "hrnek"},
+                {"cup", "Dekorační"},
 
                 {"configurable product", "kubek palette"},
 

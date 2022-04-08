@@ -81,9 +81,9 @@ public class SortingByPriceLowestFirst {
     @And("she sees the value of the first price")
     public void emilia_sees_the_first_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(1)
+                Open.productPageByPosition(2)
         );
-        firstProductPrice= DiscountedProductPrice.discountedPrice().answeredBy(theActorInTheSpotlight());
+        firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
 
     }
     @And("she sees the value of the second price")
@@ -93,7 +93,7 @@ public class SortingByPriceLowestFirst {
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(8)
         );
-        secondProductPrice= DiscountedProductPrice.discountedPrice().answeredBy(theActorInTheSpotlight());
+        secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
     }
     @Then("she should see that the sort is correct")
     public void actor_ensures_that_the_sort_is_correct(){

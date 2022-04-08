@@ -271,16 +271,16 @@
                               <include>**/LoggingInSuite*.java</include>
                                  <include>**/NavigatingWebsiteSuite_1*.java</include>
                                  <include>**/NavigatingWebsiteSuite_2*.java</include>
-                            <!--  <include>**/SortingSuite*.java</include>
+                           <include>**/SortingSuite*.java</include>
                                     <include>**/UsingMinicartSuite_1*.java</include>
                                      <include>**/UsingMinicartSuite_1*.java</include>
                                    <include>**/UsingMyAccountSuite*.java</include>
-                                 <include>**/ProductPageSuite*.java</include>&ndash;&gt;-->
+                                 <include>**/ProductPageSuite*.java</include>
 
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>16</threadCount>
-                            <forkCount>16</forkCount>
+                            <threadCount>20</threadCount>
+                            <forkCount>20</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

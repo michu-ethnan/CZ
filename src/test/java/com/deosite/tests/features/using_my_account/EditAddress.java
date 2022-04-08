@@ -21,10 +21,12 @@ import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.AccountPage.MY_ACCOUNT_HEADER;
 import static com.deosite.tests.pages.AccountPage.ADDRESS_BOOK_BUTTON;
 import static com.deosite.tests.pages.AccountPage.SUBMIT_NEW_ADDRESS_BUTTON;
+import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -72,7 +74,8 @@ public class EditAddress {
     @And("she saves it")
     public void actor_saves_it() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(SUBMIT_NEW_ADDRESS_BUTTON)
+                Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
+                WaitUntil.the(ALERT_BOX, isPresent())
         );
     }
 
@@ -80,5 +83,8 @@ public class EditAddress {
     public void actor_should_see_that_it_was_saved(String message) {
         theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), equalTo(
                 as(theActorInTheSpotlight()).translate(message))));
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(ALERT_BOX, isNotPresent()).forNoMoreThan(100).seconds()
+        );
     }
 }

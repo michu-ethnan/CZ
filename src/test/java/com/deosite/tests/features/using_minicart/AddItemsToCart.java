@@ -15,12 +15,14 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
+import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.SearchPage.PRODUCTS_TITLE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static org.hamcrest.Matchers.equalTo;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
@@ -63,5 +65,8 @@ public class AddItemsToCart {
         theActorInTheSpotlight().should(seeThat(Alert.value(), equalTo(
                 as(theActorInTheSpotlight()).translate(message)
         )));
+        theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(ALERT_BOX, isNotPresent())
+        );
     }
 }

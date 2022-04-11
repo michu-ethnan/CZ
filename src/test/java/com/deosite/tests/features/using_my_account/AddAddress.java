@@ -22,6 +22,7 @@ import static com.deosite.tests.pages.AccountPage.ADDRESS_BOOK_BUTTON;
 import static com.deosite.tests.pages.AccountPage.ADD_NEW_ADDRESS_BUTTON;
 import static com.deosite.tests.pages.AccountPage.SUBMIT_NEW_ADDRESS_BUTTON;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
@@ -70,9 +71,9 @@ public class AddAddress {
     @Then("she should see a popup saying address saved")
     public void actor_should_find_this_address_in_the_address_book(){
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).isDisplayed()
+                Ensure.that(ALERT_BOX).hasTextContent("Uložená adresa"),
+                Click.on(CLOSE_ALERT_BOX_BUTTON)
         );
-
     }
 
 }

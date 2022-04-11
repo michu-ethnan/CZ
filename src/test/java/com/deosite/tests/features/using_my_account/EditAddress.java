@@ -23,6 +23,7 @@ import static com.deosite.tests.pages.AccountPage.MY_ACCOUNT_HEADER;
 import static com.deosite.tests.pages.AccountPage.ADDRESS_BOOK_BUTTON;
 import static com.deosite.tests.pages.AccountPage.SUBMIT_NEW_ADDRESS_BUTTON;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
 import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
@@ -86,7 +87,9 @@ public class EditAddress {
     @Then("she should see that it was saved with popup saying address saved")
     public void actor_should_see_that_it_was_saved(){
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).isDisplayed()
+                Ensure.that(ALERT_BOX).hasTextContent("Uložená adresa"),
+                Click.on(CLOSE_ALERT_BOX_BUTTON)
         );
+
     }
 }

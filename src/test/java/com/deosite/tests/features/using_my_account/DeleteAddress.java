@@ -24,6 +24,7 @@ import static com.deosite.tests.pages.AccountPage.DIALOG_BOX_YES_BUTTON;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -44,6 +45,7 @@ public class DeleteAddress {
                 Open.loginPage(),
                 FillInLoginForm.type("login"),
                 SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 MoveMouseToTop.move(),
                 Open.accountPage(),
                 WaitUntil.the(MY_ACCOUNT_HEADER, isPresent()).forNoMoreThan(100).seconds(),
@@ -61,16 +63,17 @@ public class DeleteAddress {
     }
 
     @And("he confirms that he wants to remove the address")
-    public void actor_confirms_that_he_wants_to_remove_the_address() {
+    public void actor_confirms_that_he_wants_to_remove_the_address(){
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
-                WaitUntil.the(Alert.ALERT_BOX, isPresent())
+                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
         );
     }
-
     @Then("he should see a popup with address deleted inscription")
     public void actor_should_see_a_popup_with_address_deleted_inscription() {
-        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), containsString("Address deleted")));
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(ALERT_BOX).isDisplayed()
+        );
     }
 }

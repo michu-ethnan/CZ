@@ -25,6 +25,7 @@ import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.abilities.Load.as;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
+import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -45,6 +46,7 @@ public class AddAddress {
                 Open.loginPage(),
                 FillInLoginForm.type("login"),
                 SubmitLoginForm.submitLoginForm(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 MoveMouseToTop.move(),
                 Open.accountPage(),
                 WaitUntil.the(MY_ACCOUNT_HEADER, isPresent()).forNoMoreThan(50).seconds()
@@ -57,7 +59,7 @@ public class AddAddress {
                 Click.on(ADDRESS_BOOK_BUTTON),
                 WaitUntil.the(ADD_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(ADD_NEW_ADDRESS_BUTTON),
-                WaitUntil.the(AccountPage.MY_ACCOUNT_SUBHEADER, containsText("Nová adresa")),
+                WaitUntil.the(AccountPage.MY_ACCOUNT_SUBHEADER, containsText("Uložená adresa")),
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
@@ -67,8 +69,10 @@ public class AddAddress {
 
     @Then("she should see a popup saying address saved")
     public void actor_should_find_this_address_in_the_address_book(){
-        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), containsString("Uložená adresa")));
-
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(ALERT_BOX).isDisplayed()
+        );
 
     }
+
 }

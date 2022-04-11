@@ -43,7 +43,7 @@ public class SortingByPriceLowestFirst {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 WaitUntil.the(FIRST_MAIN_CATEGORY, isPresent()),
-                ClickCategory.byCategoryNumber(0),
+                ClickCategory.byCategoryNumber(6),
                 MoveMouseToTop.move(),
                 WaitUntil.the(CategoryPage.PAGINATION_ARROW, isPresent()).forNoMoreThan(50).seconds()
         );
@@ -81,7 +81,7 @@ public class SortingByPriceLowestFirst {
     @And("she sees the value of the first price")
     public void emilia_sees_the_first_price(){
         theActorInTheSpotlight().attemptsTo(
-                Open.productPageByPosition(2)
+                Open.productPageByPosition(0)
         );
         firstProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
 
@@ -91,7 +91,7 @@ public class SortingByPriceLowestFirst {
         theActorInTheSpotlight().attemptsTo(
                 Scroll.to(SEARCH_BAR),
                 ReturnToPreviousPage.goToPreviousPage(),
-                Open.productPageByPosition(8)
+                Open.productPageByPosition(11)
         );
         secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
     }

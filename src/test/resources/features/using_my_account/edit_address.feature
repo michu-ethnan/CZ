@@ -9,4 +9,4 @@ Feature: Edit address
     And she edits input fields
     And she adds a newAddress
     And she saves it
-    Then she should see that it was saved with popup saying "address saved"
+    Then she should see that it was saved with popup saying address saved

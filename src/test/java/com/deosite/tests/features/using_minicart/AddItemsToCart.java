@@ -25,6 +25,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
@@ -62,13 +63,10 @@ public class AddItemsToCart {
         );
     }
 
-    @Then("(s)he should see popup with {string} message")
-    public void actor_should_see_popup_with_message(String message) {
-        theActorInTheSpotlight().should(seeThat(Alert.value(), equalTo(
-                as(theActorInTheSpotlight()).translate(message)
-        )));
-        theActorInTheSpotlight().attemptsTo(
-                Ensure.that(SUBMIT_BUTTON).isNotDisplayed()
-        );
+    @Then("(s)he should see popup with added to cart message")
+    public void actor_should_see_popup_with_message()  {
+        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), containsString("Produkt byl přidán do košíku")));
+
+
     }
 }

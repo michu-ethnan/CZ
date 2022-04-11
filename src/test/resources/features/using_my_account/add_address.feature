@@ -6,4 +6,4 @@ Feature: Adding a new address to the address book
 
     Given that Adele is logged into her account
     When she adds newAddress to the address book
-    Then she should see a popup saying "address saved"
+    Then she should see a popup saying address saved

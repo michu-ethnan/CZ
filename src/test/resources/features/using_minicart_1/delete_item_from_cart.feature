@@ -5,4 +5,4 @@ Feature: Delete from cart
   Scenario: Should be able to
     Given that Jane has a mug in minicart
     When she deletes it
-    Then she should see "the cart is empty message"
+    Then she should see the cart is empty message

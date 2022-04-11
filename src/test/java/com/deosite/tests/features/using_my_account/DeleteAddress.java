@@ -28,6 +28,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DeleteAddress {
@@ -68,12 +69,8 @@ public class DeleteAddress {
         );
     }
 
-    @Then("he should see a popup with {string} inscription")
-    public void actor_should_see_a_popup_with_address_deleted_inscription(String message) {
-        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), equalTo(
-                as(theActorInTheSpotlight()).translate(message))));
-        theActorInTheSpotlight().attemptsTo(
-                Ensure.that(SUBMIT_BUTTON).isNotDisplayed()
-        );
+    @Then("he should see a popup with address deleted inscription")
+    public void actor_should_see_a_popup_with_address_deleted_inscription() {
+        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), containsString("Address deleted")));
     }
 }

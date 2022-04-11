@@ -29,6 +29,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 public class AddAddress {
@@ -64,12 +65,10 @@ public class AddAddress {
         );
     }
 
-    @Then("she should see a popup saying {string}")
-    public void actor_should_find_this_address_in_the_address_book(String message) {
-        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), equalTo(
-                as(theActorInTheSpotlight()).translate(message))));
-        theActorInTheSpotlight().attemptsTo(
-                Ensure.that(SUBMIT_BUTTON).isNotDisplayed()
-        );
+    @Then("she should see a popup saying address saved")
+    public void actor_should_find_this_address_in_the_address_book(){
+        theActorInTheSpotlight().should(seeThat(com.deosite.tests.questions.alert.Alert.value(), containsString("Uložená adresa")));
+
+
     }
 }

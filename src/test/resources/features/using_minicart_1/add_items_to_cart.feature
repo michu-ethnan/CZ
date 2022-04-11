@@ -7,9 +7,9 @@ Feature: Add items to cart
   Scenario: Should add product from product page to minicart
     Given that Mindy has opened product page of a mug
     When she tries to add it to cart
-    Then she should see popup with "added to cart" message
+    Then she should see popup with added to cart message
 
   Scenario: Should add product from product page to minicart
     Given that Mindy has clicked a product from a certain category
     When she tries to add it to cart
-    Then she should see popup with "added to cart" message
+    Then she should see popup with added to cart message

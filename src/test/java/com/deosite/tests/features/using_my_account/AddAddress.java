@@ -59,7 +59,7 @@ public class AddAddress {
                 Click.on(ADDRESS_BOOK_BUTTON),
                 WaitUntil.the(ADD_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(ADD_NEW_ADDRESS_BUTTON),
-                WaitUntil.the(AccountPage.MY_ACCOUNT_SUBHEADER, containsText("Uložená adresa")),
+                WaitUntil.the(AccountPage.MY_ACCOUNT_SUBHEADER, containsText("Nová adresa")),
                 FillInAddressForm.type(userType),
                 WaitUntil.the(SUBMIT_NEW_ADDRESS_BUTTON, isPresent()),
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),

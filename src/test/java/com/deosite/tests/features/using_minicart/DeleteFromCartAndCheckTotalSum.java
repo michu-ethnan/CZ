@@ -65,9 +65,7 @@ public class DeleteFromCartAndCheckTotalSum {
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 //WaitUntil.the(ALERT_BOX, isNotVisible()),
-                MoveMouseDown.move(),
-                Scroll.to(MINICART_BUTTON),
-                Open.miniCart()
+                Click.on(MINICART_BUTTON)
                 //WaitUntil.the(DELETE_PRODUCT_BUTTON, isPresent())
         );
     }

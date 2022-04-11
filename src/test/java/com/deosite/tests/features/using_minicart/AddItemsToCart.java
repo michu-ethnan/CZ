@@ -19,6 +19,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
+import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.CategoryPage.CATEGORY_HEADER;
 import static com.deosite.tests.pages.MainMenu.SEARCH_BAR;
 import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
@@ -71,7 +72,10 @@ public class AddItemsToCart {
 
     @Then("(s)he should see popup with added to cart message")
     public void actor_should_see_popup_with_message() {
-        theActorInTheSpotlight().should(seeThat(Alert.value(), containsString("Produkt byl přidán do košíku")));
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(ALERT_BOX).isDisplayed(),
+                Click.on(CLOSE_ALERT_BOX_BUTTON)
+        );
 
 
     }

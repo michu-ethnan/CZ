@@ -71,7 +71,7 @@ public class AddAddress {
     @Then("she should see a popup saying address saved")
     public void actor_should_find_this_address_in_the_address_book(){
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).hasTextContent("Uložená adresa"),
+                Ensure.that(ALERT_BOX).isDisplayed(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON)
         );
     }

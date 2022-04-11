@@ -87,7 +87,7 @@ public class EditAddress {
     @Then("she should see that it was saved with popup saying address saved")
     public void actor_should_see_that_it_was_saved(){
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).hasTextContent("Uložená adresa"),
+                Ensure.that(ALERT_BOX).isDisplayed(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON)
         );
 

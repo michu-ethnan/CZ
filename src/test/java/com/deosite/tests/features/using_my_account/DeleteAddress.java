@@ -74,7 +74,7 @@ public class DeleteAddress {
     @Then("he should see a popup with address deleted inscription")
     public void actor_should_see_a_popup_with_address_deleted_inscription() {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).hasTextContent("Address deleted"),
+                Ensure.that(ALERT_BOX).isDisplayed(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON)
         );
     }

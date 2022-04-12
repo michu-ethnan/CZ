@@ -46,7 +46,7 @@ public class DeleteFromCart {
                 Open.productPageByPosition(0),
                 AddProduct.toCart(),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
-                Open.miniCart()
+                Click.on(MINICART_BUTTON)
         );
     }
 

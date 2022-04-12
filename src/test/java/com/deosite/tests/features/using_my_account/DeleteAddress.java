@@ -18,10 +18,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
 
 import static com.deosite.tests.abilities.Load.as;
-import static com.deosite.tests.pages.AccountPage.MY_ACCOUNT_HEADER;
-import static com.deosite.tests.pages.AccountPage.ADDRESS_BOOK_BUTTON;
-import static com.deosite.tests.pages.AccountPage.FIRST_TRASH_ICON;
-import static com.deosite.tests.pages.AccountPage.DIALOG_BOX_YES_BUTTON;
+import static com.deosite.tests.pages.AccountPage.*;
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
@@ -65,19 +62,19 @@ public class DeleteAddress {
     }
 
     @And("he confirms that he wants to remove the address")
-    public void actor_confirms_that_he_wants_to_remove_the_address() throws InterruptedException {
+    public void actor_confirms_that_he_wants_to_remove_the_address()   {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
-                MoveMouse.to(ALERT_BOX)
+                WaitUntil.the(ALERT_BOX, isPresent())
 
         );
-        Thread.sleep(2000);
+
     }
     @Then("he should see a popup with address deleted inscription")
     public void actor_should_see_a_popup_with_address_deleted_inscription() {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).isDisplayed()
+                Ensure.that(SUBMIT_NEW_ADDRESS_BUTTON).isNotDisplayed()
         );
     }
 }

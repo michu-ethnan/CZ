@@ -72,7 +72,8 @@ public class EditAddress {
     @And("she adds a {word}")
     public void actor_adds_a_new_address(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                FillInAddressForm.type(userType)
+                FillInAddressForm.type(userType),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
         );
     }
 

@@ -67,6 +67,7 @@ public class DeleteAddress {
     public void actor_confirms_that_he_wants_to_remove_the_address(){
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
                 WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
         );

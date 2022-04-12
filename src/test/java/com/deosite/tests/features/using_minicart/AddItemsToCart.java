@@ -70,16 +70,8 @@ public class AddItemsToCart {
         addedProduct = ProductName.productName().answeredBy(theActorInTheSpotlight());
     }
 
-    @Then("(s)he should see popup with added to cart message")
-    public void actor_should_see_popup_with_message() {
-        theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).isDisplayed(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON)
-        );
 
-
-    }
-@And("ensure that the product is in minicart")
+@Then("ensure that the product is in minicart")
     public void actor_should_ensure_that_the_product_is_in_minicart(){
     theActorInTheSpotlight().attemptsTo(
             Open.miniCart()

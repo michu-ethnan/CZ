@@ -64,19 +64,19 @@ public class DeleteAddress {
     }
 
     @And("he confirms that he wants to remove the address")
-    public void actor_confirms_that_he_wants_to_remove_the_address(){
+    public void actor_confirms_that_he_wants_to_remove_the_address() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
                 WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
         );
+        Thread.sleep(2000);
     }
     @Then("he should see a popup with address deleted inscription")
     public void actor_should_see_a_popup_with_address_deleted_inscription() {
         theActorInTheSpotlight().attemptsTo(
-                Ensure.that(ALERT_BOX).isDisplayed(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON)
+                Ensure.that(ALERT_BOX).isDisplayed()
         );
     }
 }

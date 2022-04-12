@@ -12,6 +12,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
@@ -67,9 +68,9 @@ public class DeleteAddress {
     public void actor_confirms_that_he_wants_to_remove_the_address() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DIALOG_BOX_YES_BUTTON, isClickable()),
-                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 Click.on(DIALOG_BOX_YES_BUTTON),
-                WaitUntil.the(ALERT_BOX, isPresent()).forNoMoreThan(100).seconds()
+                MoveMouse.to(ALERT_BOX)
+
         );
         Thread.sleep(2000);
     }

@@ -32,6 +32,7 @@ public class CategoryPage {
     public static Target CATEGORY_DESCRIPTION = Target.the("Category description").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]//div[2]/h5");
     public static Target INSPIRATIONS = Target.the("Inspirations").locatedBy("//div[@class=\"css-1pq9bkx\"]");
     public static Target GO_TO_MAIN_PAGE_BUTTON = Target.the("Go to main page button").locatedBy("//div[@class=\"css-1c8xiaf\"]");
+    public static Target INSPIRATION_LIST = Target.the("Inspirations list").locatedBy("//div[@class=\"css-u8jc59\"]//..//a");
 
 
 

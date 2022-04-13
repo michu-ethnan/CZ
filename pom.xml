@@ -276,6 +276,7 @@
                                      <include>**/UsingMinicartSuite_2*.java</include>
                                    <include>**/UsingMyAccountSuite*.java</include>
                                  <include>**/ProductPageSuite*.java</include>
+                                <include>**/OrderProductsFromCategories*.java</include>
 
                             </includes>
                             <parallel>suites</parallel>

@@ -45,6 +45,7 @@ public class OrderProductsFromCategories {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(8),
+                MoveMouseToTop.move(),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 ClickBrand.byBrand(0)
         );

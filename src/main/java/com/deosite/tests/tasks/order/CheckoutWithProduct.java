@@ -2,11 +2,13 @@ package com.deosite.tests.tasks.order;
 
 import com.deosite.tests.actions.Open;
 import com.deosite.tests.actions.Search;
-import com.deosite.tests.pages.*;
-import com.deosite.tests.tasks.product.*;
+import com.deosite.tests.pages.CategoryPage;
+import com.deosite.tests.pages.MiniCart;
+import com.deosite.tests.tasks.product.AddProduct;
+import com.deosite.tests.tasks.product.MoveMouseDown;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 

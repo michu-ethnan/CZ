@@ -11,18 +11,8 @@ import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
+import static com.deosite.tests.pages.CheckoutPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.AS_COMPANY_BILLING_CHECKBOX;
-import static com.deosite.tests.pages.CheckoutPage.COMPANY_NAME_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.NIP_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.COUNTRY_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.NAME_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.SURNAME_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.STREET_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.CITY_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.POST_CODE_BILLING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.NUMBER_BILLING_INPUT;
 
 public class FillInBillingData implements Task {
 
@@ -48,7 +38,7 @@ public class FillInBillingData implements Task {
             );
         }
 
-        COUNTRY_BILLING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());
+       /* COUNTRY_BILLING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());*/
 
         actor.attemptsTo(
                 SendKeys.of(order.getName()).into(NAME_BILLING_INPUT),

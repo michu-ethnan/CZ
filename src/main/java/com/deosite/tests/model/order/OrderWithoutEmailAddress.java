@@ -9,8 +9,6 @@ public interface OrderWithoutEmailAddress {
 
     public String getCity();
 
-    public String getCountry();
-
     public String getPostCode();
 
     public String getNumber();

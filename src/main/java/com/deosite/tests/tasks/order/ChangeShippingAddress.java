@@ -1,12 +1,12 @@
 package com.deosite.tests.tasks.order;
 
-import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Step;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_SELECT;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ChangeShippingAddress implements Task {
 

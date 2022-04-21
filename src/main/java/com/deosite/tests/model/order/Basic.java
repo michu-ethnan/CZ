@@ -7,7 +7,6 @@ public class Basic implements Order {
     private final String surname;
     private final String street;
     private final String city;
-    private final String country;
     private final String postCode;
     private final String number;
 
@@ -17,7 +16,6 @@ public class Basic implements Order {
             String surname,
             String street,
             String city,
-            String country,
             String postCode,
             String number
     ) {
@@ -26,7 +24,6 @@ public class Basic implements Order {
         this.surname = surname;
         this.street = street;
         this.city = city;
-        this.country = country;
         this.postCode = postCode;
         this.number = number;
     }
@@ -49,10 +46,6 @@ public class Basic implements Order {
 
     public String getCity() {
         return city;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getPostCode() {

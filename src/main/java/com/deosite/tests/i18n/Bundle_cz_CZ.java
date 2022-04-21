@@ -62,7 +62,25 @@ public class Bundle_cz_CZ extends ListResourceBundle {
                         "Test-Test",
                         "Testowa 1",
                         "Testowo",
-                        "Česko",
+                        "11-111",
+                        "123456789"
+
+                )},
+                {"personFromPortugal", new Personal(
+                        "test@test.pl",
+                        "Test",
+                        "Test-Test",
+                        "Testowa 1",
+                        "Testowo",
+                        "11-111",
+                        "123456789"
+                )},
+                {"personFromIreland", new Personal(
+                        "test@test.pl",
+                        "Test",
+                        "Test-Test",
+                        "Testowa 1",
+                        "Testowo",
                         "11-111",
                         "123456789"
                 )},
@@ -72,20 +90,19 @@ public class Bundle_cz_CZ extends ListResourceBundle {
                         "Test-Test",
                         "Testowa 1",
                         "Testowo",
-                        "Česko",
                         "11-111",
                         "123456789",
                         "Testowa sp. z o.o",
                         "1234567891"
+
                 )},
                 {"withoutEmailAddress", new WithoutEmailAddress(
                         "Test",
                         "Test-Test",
-                        "Test 1",
-                        "Test",
-                        "Česko",
-                        "00-000",
-                        "0000000000"
+                        "Testowa 1",
+                        "Testowo",
+                        "11-111",
+                        "123456789"
                 )},
                 {"login", new LoginForm(
                         "tester-email-tester@yandex.com",

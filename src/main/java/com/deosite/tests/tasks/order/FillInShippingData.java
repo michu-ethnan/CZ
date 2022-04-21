@@ -1,8 +1,8 @@
 package com.deosite.tests.tasks.order;
 
 import com.deosite.tests.abilities.Load;
-import com.deosite.tests.model.order.Order;
 import com.deosite.tests.model.order.Company;
+import com.deosite.tests.model.order.Order;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -10,16 +10,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.thucydides.core.annotations.Step;
 
-import static com.deosite.tests.pages.CheckoutPage.SHIPPING_ADDRESS_IS_THE_SAME_CHECKBOX;
-import static com.deosite.tests.pages.CheckoutPage.AS_COMPANY_SHIPPING_CHECKBOX;
-import static com.deosite.tests.pages.CheckoutPage.COMPANY_NAME_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.COUNTRY_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.NAME_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.SURNAME_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.STREET_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.CITY_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.POST_CODE_SHIPPING_INPUT;
-import static com.deosite.tests.pages.CheckoutPage.NUMBER_SHIPPING_INPUT;
+import static com.deosite.tests.pages.CheckoutPage.*;
 
 public class FillInShippingData implements Task {
 
@@ -44,7 +35,6 @@ public class FillInShippingData implements Task {
             );
         }
 
-        COUNTRY_SHIPPING_INPUT.resolveFor(actor).selectByVisibleText(order.getCountry());
 
         actor.attemptsTo(
                 SendKeys.of(order.getName()).into(NAME_SHIPPING_INPUT),

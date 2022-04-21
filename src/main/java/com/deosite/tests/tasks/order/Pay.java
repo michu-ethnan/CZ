@@ -34,13 +34,9 @@ public class Pay implements Task {
             case "transfer":
                 actor.attemptsTo(Click.on(TRANSFER_PAYMENT_CHECKBOX));
                 break;
-            case "paypal":
-                actor.attemptsTo(Click.on(PAYPAL_PAYMENT_CHECKBOX));
-                break;
-            case "cashOnDelivery":
+            case "pickup":
                 actor.attemptsTo(Click.on(PICKUP_PAYMENT_CHECKBOX));
                 break;
-
         }
     }
 

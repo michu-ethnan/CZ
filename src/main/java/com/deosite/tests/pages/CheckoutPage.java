@@ -7,9 +7,13 @@ public class CheckoutPage {
     public static Target DELIVERY_TYPE_COURIER = Target.the("Delivery type courier").locatedBy("//div[@data-test='bestway']");
     public static Target DELIVERY_TYPE_PICKUP_POINT = Target.the("Delivery type pickup point").locatedBy("//div[@data-test='shipping_pickup_point']");
 
-    public static Target PICKUP_POINT_SELECT = Target.the("Pickup point select").locatedBy("//select[@name='pickupPlace']");
-    public static Target BILLING_ADDRESS_SELECT = Target.the("Address select").locatedBy("//select[@name='billingAddress.country']");
-    public static Target SHIPPING_ADDRESS_SELECT = Target.the("Shipping address select").locatedBy("(//*[@id=\"__app__\"]//label/select)[1]");
+    public static Target PICKUP_POINT_SELECT = Target.the("Pickup point select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div");
+    public static Target BILLING_ADDRESS_SELECT = Target.the("Address select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[6]/div/div/div/div");
+
+    public static Target SHIPPING_ADDRESS_CHECKBOX = Target.the("Address select").locatedBy("(//div[@name='shippingAddressSameAsBilling'])[2]");
+    public static Target BILLING_ADDRESS_LIST = Target.the("Address list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
+    public static Target SHIPPING_ADDRESS_SELECT = Target.the("Shipping address select").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[10]/div[1]/div/div/div/div/div/div");
+    public static Target SHIPPING_ADDRESS_LIST = Target.the("Shipping address list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
 
     public static Target EMAIL_INPUT = Target.the("Email input").locatedBy("//input[@name='email']");
 
@@ -20,7 +24,9 @@ public class CheckoutPage {
     public static Target SURNAME_BILLING_INPUT = Target.the("Surname billing input").locatedBy("//input[@name='billingAddress.lastName']");
     public static Target STREET_BILLING_INPUT = Target.the("Street billing input").locatedBy("//input[@name='billingAddress.street']");
     public static Target CITY_BILLING_INPUT = Target.the("City billing input").locatedBy("//input[@name='billingAddress.city']");
-    public static Target COUNTRY_BILLING_INPUT = Target.the("Country billing input").locatedBy("//select[@name='billingAddress.country']");
+    public static Target COUNTRY_BILLING_INPUT = Target.the("Country billing input").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/form/div[6]/div/div[6]/div/div/div/div/div");
+    public  static Target COUNTRY_BILLING_INPUT_LIST = Target.the("Country billing input list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
+
     public static Target POST_CODE_BILLING_INPUT = Target.the("Post Code billing input").locatedBy("//input[@name='billingAddress.postalCode']");
     public static Target NUMBER_BILLING_INPUT = Target.the("Number billing input").locatedBy("//input[@name='billingAddress.phone']");
 
@@ -74,4 +80,5 @@ public class CheckoutPage {
     public static Target TOTAL_SUM_AT_CHECKOUT = Target.the("Total sum at checkout").locatedBy("(//span[@data-test='total-checkout'])[9]");
     public static Target CART_VALUE = Target.the("Cart value").locatedBy("(//span[@data-test='total-checkout'])[8]");
     public static Target LOGIN_LINK = Target.the("Login link").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[1]/div/div/div/div[1]/form/div[4]/div/div[2]/p/a");
+    public static Target PICKUP_LOCATION_LIST = Target.the("pickup location list").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
 }

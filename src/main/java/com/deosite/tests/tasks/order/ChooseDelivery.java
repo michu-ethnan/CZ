@@ -4,9 +4,11 @@ import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 import static com.deosite.tests.pages.CheckoutPage.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 
 public class ChooseDelivery implements Task {
 
@@ -21,14 +23,20 @@ public class ChooseDelivery implements Task {
     public <T extends Actor> void performAs(T actor) {
         if (deliveryType.contains("pickup")) {
             actor.attemptsTo(
-                    Click.on(DELIVERY_TYPE_PICKUP_POINT)
+                    Click.on(DELIVERY_TYPE_PICKUP_POINT),
+                    Click.on(PICKUP_POINT_SELECT),
+                    SelectPickUpLocation.byLocation(2),
+                    WaitUntil.the(PICKUP_POINT_SELECT, isClickable())
             );
-            PICKUP_POINT_SELECT.resolveFor(actor).selectByValue("1");
+
+
         }
         if (deliveryType.contains("courier")) {
             actor.attemptsTo(
                     Click.on(DELIVERY_TYPE_COURIER)
             );
+
+
         }
     }
 

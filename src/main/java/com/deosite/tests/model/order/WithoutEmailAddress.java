@@ -6,7 +6,6 @@ public class WithoutEmailAddress implements OrderWithoutEmailAddress {
     private final String surname;
     private final String street;
     private final String city;
-    private final String country;
     private final String postCode;
     private final String number;
 
@@ -15,7 +14,6 @@ public class WithoutEmailAddress implements OrderWithoutEmailAddress {
             String surname,
             String street,
             String city,
-            String country,
             String postCode,
             String number
     ) {
@@ -23,7 +21,7 @@ public class WithoutEmailAddress implements OrderWithoutEmailAddress {
         this.surname = surname;
         this.street = street;
         this.city = city;
-        this.country = country;
+        //this.country = country;
         this.postCode = postCode;
         this.number = number;
     }
@@ -44,9 +42,7 @@ public class WithoutEmailAddress implements OrderWithoutEmailAddress {
         return city;
     }
 
-    public String getCountry() {
-        return country;
-    }
+
 
     public String getPostCode() {
         return postCode;

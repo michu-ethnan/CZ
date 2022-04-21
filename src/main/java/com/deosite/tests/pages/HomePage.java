@@ -27,7 +27,11 @@ public class HomePage {
     public static Target NEWS_LETTER = Target.the("Instagram").locatedBy("//*[@id=\"__app__\"]/div[2]/div[3]/div/div[14]/div/div[2]/div/div/div/div/div/a/div[1]");
     public static Target FOOTER = Target.the("Footer").locatedBy("//*[@id=\"footer\"]/div");
     public static Target FOOTER_ELEMENTS = Target.the("Footer").locatedBy("//a[@class='css-1pf7icx']");
-    public static Target SELECT_LANGUAGE = Target.the("Footer").locatedBy("//select[@class='css-1v8c1o2']");
+    public static Target SELECT_LANGUAGE = Target.the("Footer").locatedBy("//*[@id=\"footer\"]/div/div[1]/div[2]/div/div[2]/div/div/div/div/div/div");
+    public static Target SELECT_LANGUAGE_LIST = Target.the("Footer").locatedBy("//*[@id=\"__layers__\"]//div[@option]");
+
+
+
 
 
 

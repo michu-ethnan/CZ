@@ -8,10 +8,9 @@ public class Personal extends Basic implements Order {
             String surname,
             String street,
             String city,
-            String country,
             String postCode,
             String number
     ) {
-        super(email, name, surname, street, city, country, postCode, number);
+        super(email, name, surname, street, city, postCode, number);
     }
 }

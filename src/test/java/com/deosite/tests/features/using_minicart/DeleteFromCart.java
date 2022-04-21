@@ -37,7 +37,7 @@ public class DeleteFromCart {
     SetupSteps setupSteps;
 
     @Given("that {word} has a {word} in minicart")
-    public void that_actor_has_a_product_in_minicart(String actor, String product) {
+    public void that_actor_has_a_product_in_minicart(String actor, String product) throws InterruptedException {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 Search.forProductByTranslatedKeyword(product),
@@ -48,6 +48,7 @@ public class DeleteFromCart {
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 Click.on(MINICART_BUTTON)
         );
+        Thread.sleep(4000);
     }
 
     @When("she deletes it")

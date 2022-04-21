@@ -40,6 +40,8 @@ public class SelectLanguage {
     public void neveah_selects_the_language(String chooseLanguage){
     theActorInTheSpotlight().wasAbleTo(
             Scroll.to(HomePage.SELECT_LANGUAGE),
+            Click.on(SELECT_LANGUAGE),
+            WaitUntil.the(SELECT_LANGUAGE_LIST, isPresent()),
             ChooseLanguage.byLanguage(chooseLanguage),
             WaitUntil.the(CookiesNotification.ACCEPT_COOKIES_BUTTON, isPresent()),
             Click.on(CookiesNotification.ACCEPT_COOKIES_BUTTON),

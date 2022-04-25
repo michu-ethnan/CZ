@@ -260,15 +260,16 @@
                         <version>${maven.failsafe-plugin.version}</version>
                         <configuration>
                             <includes>
-                           <include>**/CheckoutSuite*.java</include>
+                            <include>**/CheckoutSuite*.java</include>
                                  <include>**/OrderingTestSuite_1*.java</include>
                                 <include>**/OrderingTestSuite_2.java</include>
-                                 <include>**/OrderingTestSuite_3.java</include>-->
+                                 <include>**/OrderingTestSuite_3.java</include>
                                  <include>**/OrderingLoggedInSuite_1.java</include>
                                 <include>**/OrderingLoggedInSuite_2.java</include>
                                  <include>**/OrderingLoggedInSuite_3.java</include>
                                  <include>**/FilteringTestSuite*.java</include>
-                                   <include>**/NavigatingWebsiteSuite_1*.java</include>
+                                <include>**/ApplyAllFiltersSuite*.java</include>
+                                    <include>**/NavigatingWebsiteSuite_1*.java</include>
                                   <include>**/NavigatingWebsiteSuite_2*.java</include>
                                   <include>**/SortingSuite*.java</include>
                                     <include>**/UsingMinicartSuite_1*.java</include>
@@ -279,8 +280,8 @@
 
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>20</threadCount>
-                            <forkCount>20</forkCount>
+                            <threadCount>8</threadCount>
+                            <forkCount>8</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

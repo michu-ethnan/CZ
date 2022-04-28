@@ -280,8 +280,8 @@
 
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>8</threadCount>
-                            <forkCount>8</forkCount>
+                            <threadCount>20</threadCount>
+                            <forkCount>20</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

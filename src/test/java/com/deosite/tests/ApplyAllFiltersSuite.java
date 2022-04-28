@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = {"src/test/resources/features/filtering/apply_filters.feature"},
+        features = {"src/test/resources/features/apply_all_filters"},
         glue = {"com.deosite"}
 )
 

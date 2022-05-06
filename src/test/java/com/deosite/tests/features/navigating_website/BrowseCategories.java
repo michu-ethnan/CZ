@@ -5,6 +5,7 @@ import com.deosite.tests.questions.account.MyAccountHeader;
 import com.deosite.tests.questions.category.CategoryHeader;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
+import com.deosite.tests.tasks.basic.MoveMouseToTop;
 import com.deosite.tests.tasks.categoryPage.EnsurePageContent;
 import com.deosite.tests.tasks.categoryPage.SelectCategory;
 import io.cucumber.java.en.And;
@@ -39,6 +40,7 @@ public class BrowseCategories {
     public void wiktoria_selects_category(String categoryName){
     theActorInTheSpotlight().attemptsTo(
             SelectCategory.byName(categoryName),
+            MoveMouseToTop.move(),
             WaitUntil.the(CATEGORY_HEADER, isPresent())
     );
     }

@@ -42,7 +42,7 @@ public class QuickSearch {
     @When("he enters the first two keys of the product he is searching for")
     public void allen_enters_the_first_two_keys(){
         theActorInTheSpotlight().attemptsTo(
-              Enter.keyValues("zah").into(SEARCH_BAR)
+              Enter.keyValues("Hrnek").into(SEARCH_BAR)
         );
     }
     @And("he chooses one product from the list")
@@ -58,7 +58,7 @@ public class QuickSearch {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(QUICK_SEARCH_PRODUCTS_TITLE, isPresent())
         );
-        theActorInTheSpotlight().should(seeThat(QuickSearchProductName.nameOfAProductOnQuickSearchBoxByPosition(0), containsString("Zah")
+        theActorInTheSpotlight().should(seeThat(QuickSearchProductName.nameOfAProductOnQuickSearchBoxByPosition(0), containsString("Hrnek")
         ));
     }
 

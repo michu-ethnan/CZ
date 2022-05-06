@@ -1,6 +1,8 @@
 package com.deosite.tests.tasks.categoryPage;
 
 import com.deosite.tests.pages.CategoryPage;
+import com.deosite.tests.pages.HomePage;
+import com.deosite.tests.pages.MainMenu;
 import com.deosite.tests.tasks.basic.RefreshPage;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -13,6 +15,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 
 import static com.deosite.tests.pages.CategoryPage.*;
+import static com.deosite.tests.pages.MainMenu.CLOSE_NEWSLETTER_POPUP;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class ApplyFilters implements Task {
@@ -116,6 +119,8 @@ public class ApplyFilters implements Task {
                     Click.on(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     RefreshPage.refresh(),
+                    WaitUntil.the(CLOSE_NEWSLETTER_POPUP, isPresent()).forNoMoreThan(50).seconds(),
+                    Click.on(CLOSE_NEWSLETTER_POPUP),
                     Click.on(ALL_FILTERS_BUTTON_AFTER_APPLYING_FILTER),
                     Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed(),
                     WaitUntil.the(PAGINATION_ARROW, isClickable()),

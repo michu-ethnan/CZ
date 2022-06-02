@@ -81,9 +81,9 @@ public class OrderProductsLoggedIn {
         theActorInTheSpotlight().attemptsTo(
                 Search.forProductByTranslatedKeyword(product),
                 WaitUntil.the(CategoryPage.PAGINATION_ARROW, isPresent()),
-                Open.productPageByPosition(3),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                Click.on(MINI_CART_BUTTON_AFTER_LOGIN),
+                Open.miniCart(),
                 Open.checkoutPage(),
                 WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds(),
                 WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isPresent()).forNoMoreThan(50).seconds()

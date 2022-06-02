@@ -41,7 +41,6 @@ public class ApplyFiltersAndRefresh {
     theActorInTheSpotlight().attemptsTo(
         Ensure.that(CategoryPage.APPLIED_FILTER_BOX).isDisplayed()
     );
-    theActorInTheSpotlight().should(seeThat(CurrentUrl.information(), containsString("p=2")));
 
 }
 @Then("she should see that the filter is applied")

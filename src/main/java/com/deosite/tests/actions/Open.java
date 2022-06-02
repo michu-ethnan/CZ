@@ -2,6 +2,8 @@ package com.deosite.tests.actions;
 
 import net.serenitybdd.core.steps.Instrumented;
 
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 public class Open {
 
     public static OpenMiniCart miniCart() {
@@ -15,7 +17,9 @@ public class Open {
     public static OpenProductPage productPageByPosition(int position) {
         return Instrumented.instanceOf(OpenProductPage.class).withProperties(position);
     }
-
+    public static OpenProductPageRandomly productPageByPositionRandomly() {
+        return instrumented(OpenProductPageRandomly.class);
+    }
     public static OpenLoginPage loginPage() {
         return new OpenLoginPage();
     }

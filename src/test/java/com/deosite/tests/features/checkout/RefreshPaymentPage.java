@@ -38,13 +38,10 @@ public class RefreshPaymentPage {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(2),
-                Open.productPageByPosition(5),
+                Open.productPageByPositionRandomly(),
                 AddProduct.toCart(),
-                MoveMouseDown.move(),
-                Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
                 Open.checkoutPage(),
-                WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
                 FillInBillingData.type(userType)
         );
     }

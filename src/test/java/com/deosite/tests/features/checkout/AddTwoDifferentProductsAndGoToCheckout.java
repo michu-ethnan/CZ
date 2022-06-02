@@ -9,6 +9,7 @@ import com.deosite.tests.questions.product.ProductName;
 import com.deosite.tests.steps.SetupSteps;
 import com.deosite.tests.tasks.Setup;
 import com.deosite.tests.tasks.basic.MoveMouseToTop;
+import com.deosite.tests.tasks.basic.RefreshPage;
 import com.deosite.tests.tasks.basic.ReturnToPreviousPage;
 import com.deosite.tests.tasks.mainMenu.ClickCategory;
 import com.deosite.tests.tasks.order.FillInBillingData;
@@ -81,6 +82,7 @@ public class AddTwoDifferentProductsAndGoToCheckout {
     @And("he adds another product to the cart from another category and goes to checkout")
     public void actor_adds_another_product_to_cart_from_different_category_and_goes_to_checkout() {
         theActorInTheSpotlight().attemptsTo(
+                RefreshPage.refresh(),
                 WaitUntil.the(FIRST_MAIN_CATEGORY, isPresent()),
                 MoveMouseToTop.move(),
                 MoveMouse.to(FIRST_MAIN_CATEGORY),

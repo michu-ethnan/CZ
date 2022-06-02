@@ -565,7 +565,7 @@ public class ApplyFilters implements Task {
                     ClickFilterButton.number(12));
             filter = FilterName.filterName().answeredBy(theActorInTheSpotlight());
             selectedFilter = filter.replace("(","").replaceAll("[0-9]", "").replace(")","").replaceAll("\\s+", "");
-            url_filter = selectedFilter;
+            url_filter = StringUtils.stripAccents(selectedFilter);
             numberOfProductsInFilter = filter.replace("(","").replaceAll("[^\\d.]", "").replace(")","").replaceAll("\\/","").replaceAll("\\s+", "");
 
             System.out.println("The selected filter name: " + selectedFilter);

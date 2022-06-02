@@ -83,6 +83,8 @@ public class AddTwoDifferentProductsAndGoToCheckout {
     public void actor_adds_another_product_to_cart_from_different_category_and_goes_to_checkout() {
         theActorInTheSpotlight().attemptsTo(
                 RefreshPage.refresh(),
+                WaitUntil.the(CLOSE_NEWSLETTER_POPUP, isPresent()),
+                Click.on(CLOSE_NEWSLETTER_POPUP),
                 WaitUntil.the(FIRST_MAIN_CATEGORY, isPresent()),
                 MoveMouseToTop.move(),
                 MoveMouse.to(FIRST_MAIN_CATEGORY),

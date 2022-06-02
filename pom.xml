@@ -260,16 +260,16 @@
                         <version>${maven.failsafe-plugin.version}</version>
                         <configuration>
                             <includes>
-                            <include>**/CheckoutSuite*.java</include>
+                       <include>**/CheckoutSuite*.java</include>
                                  <include>**/OrderingTestSuite_1*.java</include>
                                 <include>**/OrderingTestSuite_2.java</include>
                                  <include>**/OrderingTestSuite_3.java</include>
                                  <include>**/OrderingLoggedInSuite_1.java</include>
                                 <include>**/OrderingLoggedInSuite_2.java</include>
-                                 <include>**/OrderingLoggedInSuite_3.java</include>ApplyAllFiltersSuite
+                                 <include>**/OrderingLoggedInSuite_3.java</include>
                                  <include>**/FilteringTestSuite*.java</include>
                                 <include>**/ApplyAllFiltersSuite*.java</include>
-                                    <include>**/NavigatingWebsiteSuite_1*.java</include>
+                                   <include>**/NavigatingWebsiteSuite_1*.java</include>
                                   <include>**/NavigatingWebsiteSuite_2*.java</include>
                                   <include>**/SortingSuite*.java</include>
                                     <include>**/UsingMinicartSuite_1*.java</include>
@@ -277,11 +277,12 @@
                                      <include>**/UsingMyAccountSuite*.java</include>
                                     <include>**/ProductPageSuite*.java</include>
                                     <include>**/OrderProductsFromCategories*.java</include>
+                                    <include>**/OrderProductsFromBrandsPage*.java</include>
 
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>10</threadCount>
-                            <forkCount>10</forkCount>
+                            <threadCount>55</threadCount>
+                            <forkCount>55</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>

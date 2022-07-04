@@ -68,7 +68,7 @@ public class SelectCategory implements Task {
         }
         if (categoryName.contains("Marki")){
             actor.attemptsTo(
-                    ClickCategory.byCategoryNumber(8)
+                    ClickCategory.byCategoryNumber(9)
             );
 
         }

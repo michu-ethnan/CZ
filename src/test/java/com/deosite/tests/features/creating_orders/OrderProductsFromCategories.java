@@ -44,7 +44,7 @@ public class OrderProductsFromCategories {
     public void alex_wants_to_order_from_marki(String actor){
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(8),
+                ClickCategory.byCategoryNumber(9),
                 MoveMouseToTop.move(),
                 WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 ClickBrand.byBrand(0)

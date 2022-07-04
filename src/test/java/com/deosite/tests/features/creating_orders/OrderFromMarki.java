@@ -20,7 +20,7 @@ public class OrderFromMarki {
     public void actor_is_on_a_selected_brand_page(String actor, String brandName){
      theActorCalled(actor).wasAbleTo(
              Setup.site(),
-             ClickCategory.byCategoryNumber(8),
+             ClickCategory.byCategoryNumber(9),
              SelectBrandPage.byName(brandName)
              //WaitUntil.the(CategoryPage.CATEGORY_HEADER, isPresent())
      );

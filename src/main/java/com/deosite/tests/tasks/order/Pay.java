@@ -32,8 +32,6 @@ public class Pay implements Task {
             case "card":
                 break;
             case "transfer":
-                actor.attemptsTo(Click.on(TRANSFER_PAYMENT_CHECKBOX));
-                break;
             case "pickup":
                 actor.attemptsTo(Click.on(PICKUP_PAYMENT_CHECKBOX));
                 break;

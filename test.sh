@@ -74,7 +74,7 @@ add_browser_properties() {
 }
 
 start_browser() {
-  docker run -d --network host --name selenium -e SE_NODE_MAX_SESSIONS=16 --shm-size 2g selenium/standalone-"$browser":4.0.0-beta-1-prerelease-20210114
+  docker run -d --network host --name selenium -e SE_NODE_MAX_SESSIONS=10 --shm-size 2g selenium/standalone-"$browser":4.0.0-beta-1-prerelease-20210114
 }
 
 stop_browser() {

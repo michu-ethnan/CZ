@@ -31,8 +31,6 @@ public class PayAfterLogin implements Task {
             case "card":
                 break;
             case "transfer":
-                actor.attemptsTo(Click.on(TRANSFER_PAYMENT_CHECKBOX_AFTER_LOGIN));
-                break;
             case "pickup":
                 actor.attemptsTo(Click.on(PICKUP_PAYMENT_CHECKBOX_AFTER_LOGIN));
                 break;

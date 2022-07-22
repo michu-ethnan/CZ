@@ -18,10 +18,7 @@ import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Steps;
-
-import static com.deosite.tests.pages.CheckoutPage.EMAIL_INPUT;
 import static com.deosite.tests.pages.MainMenu.CLOSE_NEWSLETTER_POPUP;
-import static com.deosite.tests.pages.PaymentPage.TRANSFER_PAYMENT_CHECKBOX;
 import static com.deosite.tests.pages.PaymentPage.PICKUP_PAYMENT_CHECKBOX;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -59,8 +56,8 @@ public class RefreshPaymentPage {
                 RefreshPage.refresh(),
                 WaitUntil.the(CLOSE_NEWSLETTER_POPUP, isPresent()),
                 Click.on(MainMenu.CLOSE_NEWSLETTER_POPUP),
-                WaitUntil.the(TRANSFER_PAYMENT_CHECKBOX, isPresent()).forNoMoreThan(100).seconds(),
-                WaitUntil.the(TRANSFER_PAYMENT_CHECKBOX, isVisible())
+                WaitUntil.the(PICKUP_PAYMENT_CHECKBOX, isPresent()).forNoMoreThan(100).seconds(),
+                WaitUntil.the(PICKUP_PAYMENT_CHECKBOX, isVisible())
         );
     }
 
